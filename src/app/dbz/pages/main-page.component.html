@@ -1,10 +1,10 @@
- <h1>DBZ Personajes</h1>
+ <h1>DBZ Personajes {{hello}}</h1>
  <hr>
 
  <div class="row">
   <div class="col">
 
-    <dbz-list [charcterList]="nameCharacterDBZ"></dbz-list>
+    <dbz-list [charcterList]="other" (statusEdit)="test($event)"></dbz-list>
 
   </div>
 
