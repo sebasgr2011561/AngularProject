@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interfaces';
 
 @Component({
@@ -8,11 +8,15 @@ import { Character } from '../../interfaces/character.interfaces';
 })
 
 
-export class ListComponent {
+export class ListComponent implements OnInit {
 
-  @Input()
-  public charcterList: Character[]=[{
-    name:'Truynks',
-    power:5000
-  }];
+  //padre a hijo
+  @Input() charcterList: Character[]=[];
+
+  //hijo al padre
+  @Output() statusEdit = new EventEmitter<string>();
+
+  ngOnInit(): void {
+    this.statusEdit.emit("Hola");
+  }
 }
